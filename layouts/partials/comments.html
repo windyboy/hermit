@@ -4,10 +4,13 @@
 {{- if  .Site.Params.remark42SiteID  }}
 <script>
 	var remark_config = {
-		host: "https://remark.windy.me",
-		site_id: "backyard",
-		url: "https://windyboy.github.io",
-		locale: "en"
+		host: {{ .Site.Params.remark42Url }},
+        site_id: {{ .Site.Params.remark42SiteID }},
+        components: ['embed', 'last-comments'],
+		url: {{ .Permalink }},
+        locale: {{ .Site.Language.Lang }},
+        max_shown_comments: 10,
+        theme: 'dark',
 	  };
 	  (function(c) {
 		for(var i = 0; i < c.length; i++){
@@ -18,5 +21,6 @@
 		}
 	  })(remark_config.components || ['embed']);
    </script>
-<div id="remark42"></div>
+<div id="remark42" ></div>
+<div class="remark42__last-comments" data-max="50"></div>
 {{- end }}
