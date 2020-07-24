@@ -6,7 +6,7 @@
 	var remark_config = {
 		host: {{ .Site.Params.remark42Url }},
         site_id: {{ .Site.Params.remark42SiteID }},
-        components: ['embed', 'last-comments'],
+        components: ['embed'],
 		url: {{ .Permalink }},
         locale: {{ .Site.Language.Lang }},
         max_shown_comments: 10,
@@ -22,5 +22,4 @@
 	  })(remark_config.components || ['embed']);
    </script>
 <div id="remark42" ></div>
-<div class="remark42__last-comments" data-max="50"></div>
 {{- end }}
