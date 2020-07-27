@@ -8,8 +8,8 @@
         site_id: {{ .Site.Params.remark42SiteID }},
         components: ['embed'],
 		url: {{ .Permalink }},
-        locale: {{ .Site.Language.Lang }},
-        max_shown_comments: 10,
+        locale: 'zh',
+        max_shown_comments: {{ .Site.Params.remark42ShowComments }},
         theme: 'dark',
 	  };
 	  (function(c) {
